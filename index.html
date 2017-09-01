@@ -1,0 +1,41 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Woosh</title>
+
+        <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Roboto+Slab:400,700"> -->
+        <!-- <link rel="stylesheet" href="css/style.css"> -->
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+    </head>
+
+    <body>
+
+        <div>Unicorns</div>
+        <hr>
+
+        {% for unicorn in unicorns %}
+            <div>
+                <p id="unm">{{unicorn.name}}</p>
+                <p>Current Location: {{unicorn.location}}</p>
+                {% if unicorn.location != "Barn" %}
+                    <button id="barn">Barn</button>
+                {% endif %}
+
+                {% if unicorn.location != "Forest" %}
+                    <button id="forest">Forest</button>
+                {% endif %}
+
+                {% if unicorn.location != "Pasture" %}
+                    <button id="pasture">Pasture</button>
+                {% endif %}
+            </div>
+            <hr>
+        {% endfor %}
+
+        <script src="js/libs/jquery.min.js"></script>
+        <script src="js/script.js"></script>
+
+    </body>
+</html>
